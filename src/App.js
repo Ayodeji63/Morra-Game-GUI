@@ -171,7 +171,7 @@ function App() {
       score(outcome);
       setAliceGuess(`${aliceGuess}`);
       setBobGuess(`${bobGuess}`);
-      await sleep(10000);
+      await sleep(7000);
     },
     seeWinning: (outcome) => {
       setWinnigNum(`${outcome}`);
@@ -179,6 +179,7 @@ function App() {
     },
     endGame: () => {
       setText("Loading...");
+      setRounds(0);
     },
     seeOutcome: (outcome) => {
       setWinner(`${OUTCOME[outcome]}`);

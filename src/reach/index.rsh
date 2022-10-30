@@ -200,10 +200,16 @@ export const main = Reach.App(() => {
     }
 
     Alice.only(() => {
-      const endGame = declassify(interact.endGame());
+      const aliceEndRound = declassify(interact.endGame());
     });
     commit();
-    Alice.publish(endGame);
+    Alice.publish(aliceEndRound);
+
+    Bob.only(() => {
+      const bobEndRound = declassify(interact.endGame());
+    });
+    commit();
+    Bob.publish(bobEndRound);
 
     LHS = forAlice > forBob ? 0 : forBob > forAlice ? 2 : 1;
     continue;
