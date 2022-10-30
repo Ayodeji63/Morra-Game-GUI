@@ -1,13 +1,163 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+:root {
+  Radial-Gradient: #1f3756 to #141638 #2a46c0 #606e85;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+input {
+  color: #000;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  width: 100%;
+}
+.App {
+@apply bg-gradient-to-r from-[#1f3756] to-[#141638] 
+text-[#fff] min-h-screen 
+}
+
+.top h1 {
+  @apply text-5xl pt-5 mb-10
+}
+
+.App-header {
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+/* .button{
+  height: 40px;
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 1s;
+  font-size: 15px;
+  width: fit-content;
+  align-self: center;
+} */
+
+.button {
+  @apply h-[40px] p-2 mt-5 mb-5 rounded cursor-pointer transition text-[15px] w-fit self-center border border-current hover:bg-[#2a46c0]
+}
+
+.button:hover{
+  transform: scale(110%);
+}
+
+.set_wager {
+  @apply flex flex-col 
+}
+
+.set_wager .button {
+  @apply w-[100%]
+}
+.acceptOrDecline {
+  @apply flex flex-col
+}
+
+.acceptOrDecline .button {
+  @apply w-[100%]
+}
+
+.acceptOrDecline h2 {
+  @apply text-[#606e85]
+}
+
+.Board {
+  @apply w-[500px] flex flex-col items-center
+}
+.Board_header {
+  @apply flex w-screen justify-around items-center rounded-lg p-5
+}
+
+.score_board {
+  @apply bg-[#fff] w-[100px] 
+}
+
+.score_board h2 {
+  @apply text-[#2a46c0] text-[20px]
+}
+
+.score_board h1 {
+  @apply text-[#606e85] text-5xl pb-3
+}
+
+.fingers_board {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background-image: url(../public/images/hexa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 50px;
+}
+
+.fingers {
+  @apply w-[100px] h-[100px] absolute border-[20px] rounded-full bg-[#fff] text-[#000] hover:scale-125 transition-all
+}
+
+.finger {
+  @apply w-[100px] h-[100px] border-[20px]  bg-[#fff] text-[#000] border-pink-600
+}
+
+.finger {
+  border-radius: 50%;
+}
+.zero {
+  @apply border-violet-800 top-[-20px] left-[120px]
+}
+
+.one {
+  @apply border-fuchsia-800 left-[-20px] top-12
+}
+
+.two {
+  @apply border-pink-600 right-[-20px] top-12
+}
+
+.three {
+  @apply border-rose-500 top-[200px] left-[-20px]
+}
+
+.four {
+  @apply border-indigo-400 top-[200px] right-[-20px]
+}
+
+.five {
+  @apply border-sky-500 bottom-[-15px] left-[130px]
+}
+
+.roundOut {
+  @apply flex flex-col justify-between items-center 
+}
+
+.roundOut p {
+  @apply p-0
+}
+
+.block {
+  @apply border-sky-50 opacity-75 hover:scale-100
+}
+.textarea{
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
