@@ -77,16 +77,21 @@ text-[#fff] min-h-screen
 }
 
 .Board {
-  @apply w-[500px] flex flex-col items-center
+  @apply w-[500px]  flex flex-col items-center 
 }
 .Board_header {
-  @apply flex w-screen justify-around items-center rounded-lg p-5
+  @apply flex w-screen justify-around items-center rounded-lg p-5 relative
 }
 
 .score_board {
-  @apply bg-[#fff] w-[100px] 
+  @apply bg-[#fff] w-[100px] fixed sm:top-[30px] top-[100px]
 }
-
+.score1 {
+  @apply sm:left-[30px] left-[15px]
+}
+.score2 {
+  @apply sm:right-[30px] right-[80px]
+}
 .score_board h2 {
   @apply text-[#2a46c0] text-[20px]
 }
@@ -106,39 +111,47 @@ text-[#fff] min-h-screen
   margin-top: 50px;
 }
 
+
+@media only screen and (max-width: 600px) {
+.fingers_board {
+    width: 250px;
+    height: 250px;
+    /* display: none; */
+  }
+}
 .fingers {
-  @apply w-[100px] h-[100px] absolute border-[20px] rounded-full bg-[#fff] text-[#000] hover:scale-125 transition-all
+  @apply sm:w-[100px] w-[80px] sm:h-[100px] h-[80px] absolute sm:border-[20px] border-[15px] rounded-full bg-[#fff] text-[#000] hover:scale-125 transition-all
 }
 
 .finger {
-  @apply w-[100px] h-[100px] border-[20px]  bg-[#fff] text-[#000] border-pink-600
+  @apply sm:w-[100px] w-[80px] sm:h-[100px] h-[80px] border-[20px]  bg-[#fff] text-[#000] border-pink-600
 }
 
 .finger {
   border-radius: 50%;
 }
 .zero {
-  @apply border-violet-800 top-[-20px] left-[120px]
+  @apply border-violet-800 sm:top-[-20px] top-[-30px] sm:left-[120px] left-[90px]
 }
 
 .one {
-  @apply border-fuchsia-800 left-[-20px] top-12
+  @apply border-fuchsia-800 sm:left-[-20px] left-[-15px] sm:top-12 top-10
 }
 
 .two {
-  @apply border-pink-600 right-[-20px] top-12
+  @apply border-pink-600 sm:right-[-20px] right-[-15px] sm:top-12 top-10
 }
 
 .three {
-  @apply border-rose-500 top-[200px] left-[-20px]
+  @apply border-rose-500 sm:top-[200px] top-[150px] sm:left-[-20px] left-[-15px]
 }
 
 .four {
-  @apply border-indigo-400 top-[200px] right-[-20px]
+  @apply border-indigo-400 sm:top-[200px] top-[150px] right-[-20px]
 }
 
 .five {
-  @apply border-sky-500 bottom-[-15px] left-[130px]
+  @apply border-sky-500 sm:bottom-[-15px] bottom-[-15px] sm:left-[130px] left-[90px]
 }
 
 .roundOut {
@@ -152,7 +165,7 @@ text-[#fff] min-h-screen
 .block {
   @apply border-sky-50 opacity-75 hover:scale-100
 }
-.textarea{
+/* .textarea{
   width: 500px;
   height: 300px;
   padding: 20px;
@@ -160,4 +173,7 @@ text-[#fff] min-h-screen
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+.textarea {
+  @apply  sm:w-[500px] w-[320px] lg:h-[300px] h-[200px] p-[20px] text-[#000] flex justify-center items-center
 }

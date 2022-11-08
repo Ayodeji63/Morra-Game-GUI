@@ -50,7 +50,7 @@ export const Board = ({accept, guessResult, setText, text, view, isFinger, isGue
            {winner && <h1 className="text-4xl font-semibold mb-7 text-amber-500">{winner}</h1>}
              <h2>{text}</h2>
            <header className="Board_header">
-            <div className="score_board">
+            <div className="score_board score1">
             <h2>You</h2>
             <h1>{num1}</h1>
             </div>
@@ -115,7 +115,7 @@ export const Board = ({accept, guessResult, setText, text, view, isFinger, isGue
             {view == views.RESTART && <button onClick={resetGame} className='button p-10'>
                 Play Again
             </button> }
-            <div className="score_board">
+            <div className="score_board score2">
             <h2>Opponent</h2>
             <h1>{num2}</h1>
             </div>
